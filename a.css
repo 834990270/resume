@@ -1,3 +1,4 @@
+*{margin: 0; padding: 0;}
 .clearfix::after{
     content:'';
     display:block;
@@ -5,19 +6,57 @@
     margin:0;
     padding:0;
 }
+
 a{color:inherit;text-decoration: none;}
-.topNavBar{padding:20px 16px;}
-.topNavBar>a{text-decoration: none;float: left;}
-.topNavBar>nav{float: right;padding-top: 7px;padding-bottom:2px;}
-.topNavBar>nav>ul{float: left;padding:0px;margin: 0px;
+.topNavBar{padding:20px 0 16px 0;position: fixed;
+    top: 0px;left: 0px;
+    width:100%;}
+.topNavBar-inner{padding: 0 16px;}
+.topNavBar a{text-decoration: none;float: left;}
+.topNavBar nav{float: right;padding-top: 7px;padding-bottom:2px;}
+.topNavBar nav ul{float: left;padding:0px;margin: 0px;
     list-style: none;padding-left: 17px;padding-right: 17px;}
-.topNavBar>nav>ul>li{float: left;display:block;
+.topNavBar nav ul li{float: left;display:block;
     padding-left: 17px;padding-right: 17px;
     padding-top: 5px;padding-bottom:6px;}
-.topNavBar>nav>ul>li>a{font-size: 12px;color:#b7b7b7;
+.topNavBar nav ul li a{font-size: 12px;color:#b7b7b7;
     font-weight:bold;border-bottom: 3px solid transparent; 
     border-top: 3px solid transparent;   
     padding-top: 5px;padding-bottom:5px;}
-.topNavBar>nav>ul>li>a:hover{border-bottom: 3px solid red;}
+.topNavBar nav ul li a:hover{border-bottom: 3px solid red;}
 .topNavBar .logo{font-size:24px;font-family: Arial Black;
 padding-top: 3px;padding-bottom:4px;}
+.banner{height:515px;background-image: url(./imge/wallhaven-694436.jpg);
+   background-size:cover;
+background-position: center center;}
+  
+.banner .mask{height:515px;background-color: rgba(0,0,0,0.6)}
+
+.card{
+        max-width:940px;margin-left: auto;margin-right: auto;
+        background: #efefefef;height: 528px;
+        line-height: 22px;position: relative;margin-bottom:10px;}   
+.picture{float: left;}
+.card .text{float: left;}
+.card .box{padding: 50px;}
+.card .text{margin-left: 65px;width:470px;}
+.card .text .h1{margin-top: 100px;}
+
+.card .welcome{background:#e6686a;color:white;border: 1px solid red;position:relative;
+    margin-bottom:40px;display: inline-block;}
+.card .welcome .triangle{border: 10px solid transparent;
+    width:0px;
+    border-left-color: #e6686a;
+    border-top-width: 0px;
+    display: block;position: absolute;top:100%;left:5px;} 
+.card .text p{display:block;margin-top:15px;}
+.card hr{margin:20px 0;}
+.card dl dt,
+.card dl dd{float: left;padding:5px 0;}
+.card dl dt{width:70%;color:#9da0a7;}
+.card dl dd{width:30%;font-weight: bold;}
+.card>footer.media>a{display: inline-block;border-radius:50%;
+                    width:40px;line-height:30px;padding:5px 0;margin:16px;}
+.card>footer.media>a:hover{background:#cf5d5f;}                    
+.card>footer.media{background:#e6686a;float: none;text-align:center;}
+.card svg{width:30px;height: 30px;fill: white;vertical-align: top;}
