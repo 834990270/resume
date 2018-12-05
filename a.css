@@ -38,7 +38,7 @@ background-position: center center;}
         line-height: 22px;position: relative;margin-bottom:10px;}   
 .picture{float: left;}
 .card .text{float: left;}
-.card .box{padding: 50px;}
+.card .pictureAndtext{padding: 50px;}
 .card .text{margin-left: 65px;width:470px;}
 .card .text .h1{margin-top: 100px;}
 
