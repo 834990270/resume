@@ -58,17 +58,31 @@
     <div id="siteWelcome" class="site-welcome active">
         <div class="loading"></div>
     </div>  
-  <div class="topNavBar clearfix">
+  <div id="topNavBar" class="topNavBar">
     <div class="topNavBar-inner clearfix">
       <a class="logo" href="#" alt="logo">
         <span style="margin-right: 4px;color:#e6686a">RE</span><span style="color:#9a90a2">sume</span>
       </a>
-      <nav>
+      <nav class="menu">
         <ul class="clearfix">
-          <li><a href="#">关于</a></li>
-          <li><a href="#">技能</a></li>
-          <li><a href="#">作品</a></li>
-          <li><a href="#">博客</a></li>
+          <li><a href="#siteAbout">关于</a></li>
+          <li><a href="#siteSkills">技能</a></li>
+          <li class="menuTigger">
+            <a href="#siteWorks">作品</a>
+            <ul class="submenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
+          </li>
+          <li class="menuTigger">
+            <a href="#">博客</a>
+            <ul class="submenu">
+              <li>博客1</li>
+              <li>博客2</li>
+              <li>博客3</li>
+            </ul>
+          </li>
           <li><a href="#">日历</a></li>
           <li><a href="#">联系方式</a></li>
           <li><a href="#">学习经历</a></li>
@@ -81,7 +95,7 @@
     <div class="mask"></div>
   </div>
   <main style="margin-top:-350px;">
-    <div class="card ">
+    <div id="siteAbout" class="card ">
       <div class="pictureAndtext clearfix">
 
         <div class="picture">
@@ -135,7 +149,7 @@
       技能：前端开发，小程序制作，app制作，ps，ai。
     </p>
   </main>
-  <section class="skills">
+  <section id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -176,7 +190,7 @@
       </li>
     </ol>
   </section>
-  <section class="portfoolio">
+  <section id="siteWorks" class="portfoolio">
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
@@ -214,7 +228,36 @@
   <script>
     setTimeout(function(){
       siteWelcome.classList.remove('active')
-    },3000  )
+    },2000  )
+    window.onscroll =function(xxxxx){
+      if(window.scrollY>0){
+        topNavBar.classList.add('sticky')
+      }else{
+        topNavBar.classList.remove('sticky')
+      }
+    }
+let liTags = document.querySelectorAll('nav.menu > ul > li')
+for(let i=0; i<liTags.length; i++){
+  liTags[i].onmouseenter = function(x){
+    x.currentTarget.classList.add('active')
+  }
+  liTags[i].onmouseleave = function(x){
+    x.currentTarget.classList.remove('active')
+  }
+}
+let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+for(let i=0; i<aTags.length; i++){
+  aTags[i].onclick = function(x){
+    x.preventDefault()
+    let a = x.currentTarget
+    let href = a.getAttribute('href') //'#siteAbout'
+    let element = document.querySelector(href)
+    let top = element.offsetTop
+    window.scrollTo(0, top - 80)
+  }
+}
+
+
     </script>
 </body>
 

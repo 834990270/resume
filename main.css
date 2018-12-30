@@ -1,115 +1,362 @@
-*{margin: 0; padding: 0;}
-body{background:#F0EEF0}
-.clearfix::after{
-    content:'';
-    display:block;
-    clear:both;
-    margin:0;
-    padding:0;
+body {
+  background: #efefef;
+  margin: 0;
 }
-h1,h2,h3,h4,h5,h6{font-weight:normal;}
-ul,ol{list-style: none;}
-a{color:inherit;text-decoration: none;}
-.topNavBar{padding:20px 0 16px 0;position: fixed;
-    top: 0px;left: 0px;
-    width:100%;}
-.topNavBar-inner{padding: 0 16px;}
-.topNavBar a{text-decoration: none;float: left;}
-.topNavBar nav{float: right;padding-top: 7px;padding-bottom:2px;}
-.topNavBar nav ul{float: left;padding:0px;margin: 0px;
-    list-style: none;padding-left: 17px;padding-right: 17px;}
-.topNavBar nav ul li{float: left;display:block;
-    padding-left: 17px;padding-right: 17px;
-    padding-top: 5px;padding-bottom:6px;}
-.topNavBar nav ul li a{font-size: 12px;color:#b7b7b7;
-    font-weight:bold;border-bottom: 3px solid transparent; 
-    border-top: 3px solid transparent;   
-    padding-top: 5px;padding-bottom:5px;}
-.topNavBar nav ul li a:hover{border-bottom: 3px solid red;}
-.topNavBar .logo{font-size:24px;font-family: Arial Black;
-padding-top: 3px;padding-bottom:4px;}
-.banner{height:515px;background-image: url(./imge/wallhaven-694436.jpg);
-        background-size:cover;
-background-position: center center;}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #dedede;
+}
+ul,
+ol {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
-.banner .mask{height:515px;background-color: rgba(0,0,0,0.6)}
+.topNavBar {
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.5s;
+  color: #b7b7b7;
+}
+.topNavBar.sticky {
+  background: white;
+  padding: 10px 0;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #3d4451;
+}
+.topNavBar-inner {
+  padding: 0 16px;
+}
+.topNavBar nav {
+  padding-top: 5px;
+  float: right;
+}
+.topNavBar nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topNavBar nav > ul > li {
+  float: left;
+  margin-left: 17px;
+  margin-right: 17px;
+  position: relative;
+}
+.topNavBar nav > ul > li > a {
+  font-size: 12px;
+  color: inherit;
+  font-weight: bold;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: block;
+  position: relative;
+}
+.topNavBar nav > ul > li.active > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #e06567;
+  height: 3px;
+  animation: menuSlide 0.5s;
+}
+@keyframes menuSlide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.topNavBar .submenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  color: #3d4451;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.topNavBar li.active > .submenu {
+  display: block;
+  animation: submenuSlide 0.3s;
+}
+@keyframes submenuSlide {
+  0% {
+    margin-right: 100%;
+  }
+  100% {
+    margin-right: 0%;
+  }
+}
+.topNavBar .submenu > li {
+  white-space: nowrap;
+  padding: 5px 10px;
+}
+.topNavBar .logo {
+  font-size: 24px;
+  font-family: Arial Black;
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+.banner {
+  height: 515px;
+  background-image: url(./imge/wallhaven-694436.jpg);
+  background-size: cover;
+  background-position: center center;
+}
 
-.card{
-        max-width:940px;margin-left: auto;margin-right: auto;
-        background: #efefefef;height: 528px;
-        line-height: 22px;position: relative;margin-bottom:10px;}   
-.picture{float: left;}
-.card .text{float: left;}
-.card .pictureAndtext{padding: 50px;}
-.card .text{margin-left: 65px;width:470px;}
-.card .text .h1{margin-top: 100px;}
-.topNavBar:hover{background-position-y:-50px;background:white;}
-.card .welcome{background:#e6686a;color:white;border: 1px solid red;position:relative;
-    margin-bottom:40px;display: inline-block;}
-.card .welcome .triangle{border: 10px solid transparent;
-    width:0px;
-    border-left-color: #e6686a;
-    border-top-width: 0px;
-    display: block;position: absolute;top:100%;left:5px;} 
-.card .text p{display:block;margin-top:15px;}
-.card hr{margin:20px 0;}
+.banner .mask {
+  height: 515px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #efefefef;
+  height: 528px;
+  line-height: 22px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.picture {
+  float: left;
+}
+.card .text {
+  float: left;
+}
+.card .pictureAndtext {
+  padding: 50px;
+}
+.card .text {
+  margin-left: 65px;
+  width: 470px;
+}
+.card .text .h1 {
+  margin-top: 100px;
+}
+.topNavBar:hover {
+  background-position-y: -50px;
+  background: white;
+}
+.card .welcome {
+  background: #e6686a;
+  color: white;
+  border: 1px solid red;
+  position: relative;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+.card .welcome .triangle {
+  border: 10px solid transparent;
+  width: 0px;
+  border-left-color: #e6686a;
+  border-top-width: 0px;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 5px;
+}
+.card .text p {
+  display: block;
+  margin-top: 15px;
+}
+.card hr {
+  margin: 20px 0;
+}
 .card dl dt,
-.card dl dd{float: left;padding:5px 0;}
-.card dl dt{width:70%;color:#9da0a7;}
-.card dl dd{width:30%;font-weight: bold;}
-.card>footer.media>a{display: inline-block;border-radius:50%;
-                    width:40px;line-height:30px;padding:5px 0;margin:16px;}
-.card>footer.media>a:hover{background:#cf5d5f;}                    
-.card>footer.media{background:#e6686a;float: none;text-align:center;}
-.card svg{width:30px;height: 30px;fill: white;vertical-align: top;}
-.downloadResume{font-size: 14px;line-height: 16px;
-    padding: 21px 55px;
-    border: 1px solid #cdcfd1;
-    background: #efefefef;
-    display: inline-block;
-    border-radius:2px;color:#3d4451;}
-.downloadResumebox{text-align: center;margin:50px auto;}
-.downloadResume:hover{
-box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.5);}
-.Selfintroduction{max-width:940px;margin-left: auto;margin-right: auto;
-                    text-align: center;font-family: kaiti;line-height: 1.8;font-size:18px;}
-section{text-align: center;margin-bottom:100px;}
+.card dl dd {
+  float: left;
+  padding: 5px 0;
+}
+.card dl dt {
+  width: 70%;
+  color: #9da0a7;
+}
+.card dl dd {
+  width: 30%;
+  font-weight: bold;
+}
+.card > footer.media > a {
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  line-height: 30px;
+  padding: 5px 0;
+  margin: 16px;
+}
+.card > footer.media > a:hover {
+  background: #cf5d5f;
+}
+.card > footer.media {
+  background: #e6686a;
+  float: none;
+  text-align: center;
+}
+.card svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  vertical-align: top;
+}
+.downloadResume {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 21px 55px;
+  border: 1px solid #cdcfd1;
+  background: #efefefef;
+  display: inline-block;
+  border-radius: 2px;
+  color: #3d4451;
+}
+.downloadResumebox {
+  text-align: center;
+  margin: 50px auto;
+}
+.downloadResume:hover {
+  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.5);
+}
+.Selfintroduction {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: kaiti;
+  line-height: 1.8;
+  font-size: 18px;
+}
+section {
+  text-align: center;
+  margin-bottom: 100px;
+}
 section.skills,
-section.portfoolio{max-width:940px;margin-left: auto;margin-right: auto;margin-top:60px;}
+section.portfoolio {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
 section.skills > h2,
-section.portfoolio > h2{text-align: center;    
-    color: #3d4451;
-    font-size: 34px;
-    line-height: 1.2;
-    font-weight: 600;margin-top:100px;}
-section.skills h3{
-    font-size: 14px;
-    line-height: 1.1;   
-    padding-right: 40px;
+section.portfoolio > h2 {
+  text-align: center;
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-top: 100px;
 }
-section.skills > ol > li{float:left;width: 48%;box-sizing: border-box;
-    padding-right:20px;
+section.skills h3 {
+  font-size: 14px;
+  line-height: 1.1;
+  padding-right: 40px;
 }
-section.skills > ol > li:nth-child(even){float: right;}
-section.skills > ol{
-    background:white;
-    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.5);
-    padding: 42px 50px 10px;
-    margin-top:30px;
+section.skills > ol > li {
+  float: left;
+  width: 48%;
+  box-sizing: border-box;
+  padding-right: 20px;
 }
-.progressBar{height:5px;background:#FAE1E1;border-radius: 2px;margin:4px 0 40px;}
-.progressBar > .progress{height:100%;background:#E8676B;width: 70%;border-radius: 2px;}
-section.portfoolio{text-align: center;}
-section.portfoolio>nav{display: inline-block;vertical-align: top;margin-top:32px;}
-section.portfoolio>nav>ol{display: inline-block;vertical-align: top;margin: 0 auto;}
-section.portfoolio>nav>ol>li{float: left;margin-left: 40px;cursor: pointer;}
-section.portfoolio>nav>ol>li:first-child{margin-left: 0;}
-section.portfoolio>nav .bar{height: 5px;background: white;margin-top:5px;border-radius:2px;}
-section.portfoolio>nav .bar-inner{height:100%;background: #E8676B;border-radius:2px;
-transition: all 0.3s}
-section.portfoolio>nav .bar.state-1 .bar-inner{margin-left:-9px;width:50px;}
-section.portfoolio>nav .bar.state-2 .bar-inner{margin-left: 65px;width:50px;}
-section.portfoolio>nav .bar.state-3 .bar-inner{margin-left: 140px;width:96px;}
-section.portfoolio>.works{position: relative;}
-section.portfoolio .works>.big,
-section.portfoolio .works>.small{position:absolute}
+section.skills > ol > li:nth-child(even) {
+  float: right;
+}
+section.skills > ol {
+  background: white;
+  box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.5);
+  padding: 42px 50px 10px;
+  margin-top: 30px;
+}
+.progressBar {
+  height: 5px;
+  background: #fae1e1;
+  border-radius: 2px;
+  margin: 4px 0 40px;
+}
+.progressBar > .progress {
+  height: 100%;
+  background: #e8676b;
+  width: 70%;
+  border-radius: 2px;
+}
+section.portfoolio {
+  text-align: center;
+}
+section.portfoolio > nav {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 32px;
+}
+section.portfoolio > nav > ol {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+}
+section.portfoolio > nav > ol > li {
+  float: left;
+  margin-left: 40px;
+  cursor: pointer;
+}
+section.portfoolio > nav > ol > li:first-child {
+  margin-left: 0;
+}
+section.portfoolio > nav .bar {
+  height: 5px;
+  background: white;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+section.portfoolio > nav .bar-inner {
+  height: 100%;
+  background: #e8676b;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+section.portfoolio > nav .bar.state-1 .bar-inner {
+  margin-left: -9px;
+  width: 50px;
+}
+section.portfoolio > nav .bar.state-2 .bar-inner {
+  margin-left: 65px;
+  width: 50px;
+}
+section.portfoolio > nav .bar.state-3 .bar-inner {
+  margin-left: 140px;
+  width: 96px;
+}
+section.portfoolio > .works {
+  position: relative;
+}
+section.portfoolio .works > .big,
+section.portfoolio .works > .small {
+  position: absolute;
+}
