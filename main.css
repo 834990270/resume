@@ -276,7 +276,7 @@ section {
 }
 section.skills,
 section.portfoolio {
-  max-width: 940px;
+  max-width: 870px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
@@ -331,52 +331,25 @@ section.skills.offset .progress{
 section.portfoolio {
   text-align: center;
 }
-section.portfoolio > nav {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 32px;
-}
-section.portfoolio > nav > ol {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 auto;
-}
-section.portfoolio > nav > ol > li {
-  float: left;
-  margin-left: 40px;
-  cursor: pointer;
-}
-section.portfoolio > nav > ol > li:first-child {
-  margin-left: 0;
-}
-section.portfoolio > nav .bar {
-  height: 5px;
-  background: white;
-  margin-top: 5px;
-  border-radius: 2px;
-}
-section.portfoolio > nav .bar-inner {
-  height: 100%;
-  background: #e8676b;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-section.portfoolio > nav .bar.state-1 .bar-inner {
-  margin-left: -9px;
-  width: 50px;
-}
-section.portfoolio > nav .bar.state-2 .bar-inner {
-  margin-left: 65px;
-  width: 50px;
-}
-section.portfoolio > nav .bar.state-3 .bar-inner {
-  margin-left: 140px;
-  width: 96px;
-}
+
 section.portfoolio > .works {
   position: relative;
 }
 section.portfoolio .works > .big,
 section.portfoolio .works > .small {
   position: absolute;
+}
+.swiper-container {
+  width: 668px;
+  height: 501px;
+  background:white;
+}
+section.portfoolio h2{margin-bottom: 32px;}
+.swiper-button-prev,
+.swiper-button-next{
+  background-color:white;
+  height:64px;
+  width:64px;
+  border-radius:50%;
+  margin:0 auto;
 }
