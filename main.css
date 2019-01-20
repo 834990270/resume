@@ -353,3 +353,10 @@ section.portfoolio h2{margin-bottom: 32px;}
   border-radius:50%;
   margin:0 auto;
 }
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
