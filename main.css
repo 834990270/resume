@@ -281,6 +281,7 @@ section.portfoolio {
   margin-right: auto;
   margin-top: 60px;
 }
+section.message > h2,
 section.skills > h2,
 section.portfoolio > h2 {
   text-align: center;
@@ -360,3 +361,16 @@ section.portfoolio h2{margin-bottom: 32px;}
   fill: currentColor;
   overflow: hidden;
 }
+
+
+section.message>ol{
+  max-width: 700px;
+  margin:0 auto;
+  border-top: 1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  background:#f4f4f4;
+
+}
+section.message>ol>li{padding:16px;
+  border-bottom:1px solid #ddd;
+text-align: justify;}
